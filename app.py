@@ -2,7 +2,7 @@ import streamlit as st
 import json
 
 st.set_page_config(
-    page_title="TYT HAP BİLGİ",
+    page_title="NURİYEM TYT Yİ EZİP GEÇİYOR - SİSTEM AKTİVE OLUYOR...",
     page_icon="📚",
     layout="centered",
     initial_sidebar_state="collapsed"
