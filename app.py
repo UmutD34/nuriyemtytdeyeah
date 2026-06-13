@@ -117,7 +117,7 @@ if "current_ders" not in st.session_state:
     st.session_state.current_ders = None
 
 # ── UI ───────────────────────────────────────────────────────────────────────
-st.markdown('<div class="hud-wrap"><div class="hud-title">📚 TYT HAP BİLGİ</div><div class="hud-sub">SINAV HAZIRLIK SİSTEMİ</div></div>', unsafe_allow_html=True)
+st.markdown('<div class="hud-wrap"><div class="hud-title">📚 NURİYEM TYT Yİ EZİP GEÇİYOR SAKIZ DİYE CİGNİYOR. SİSTEM YÜKLENİYOR...</div><div class="hud-sub">SINAV HAZIRLIK SİSTEMİ</div></div>', unsafe_allow_html=True)
 
 # Ders ve Konu Seçimi
 d1, d2, d3 = st.columns([1.5, 1.8, 1.4])
