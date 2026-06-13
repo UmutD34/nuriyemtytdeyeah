@@ -192,7 +192,7 @@ if not st.session_state.onboarding_seen:
                 <strong>Nuriye Hanımın</strong> şahsı için<br>
                 özel kodlanmıştır.
                 <br><br>
-                Anadolu'da bir yolculuğa başla,<br>
+                Anadolu\'da bir yolculuğa başla,<br>
                 dağları, ormanları ve kuşları keşfet.
             </div>
         </div>
@@ -206,7 +206,7 @@ if not st.session_state.onboarding_seen:
     st.stop()
 
 # ── UI ───────────────────────────────────────────────────────────────────────
-st.markdown('<div class="hud-wrap"><div class="hud-title">🏔️ TYT Çalışma Yolculuğu</div><div class="hud-sub">Anadolu'da Bir Öğrenme Serüveni</div></div>', unsafe_allow_html=True)
+st.markdown('<div class="hud-wrap"><div class="hud-title">🏔️ TYT Çalışma Yolculuğu</div><div class="hud-sub">Anadolu\'da Bir Öğrenme Serüveni</div></div>', unsafe_allow_html=True)
 
 # Ders ve Konu Seçimi
 d1, d2, d3 = st.columns([1.5, 1.8, 1.4])
@@ -306,7 +306,7 @@ with st.expander("🏔️  ANADOLU'DA YOLCULUĞU ANLA"):
     st.markdown("""
 **Yolculuğun Haritası:**
 
-Anadolu'da bir öğrenme serüvenine başladın. Her hap bilgiyi okudukça, dağları tırmanıyor, ormanları geçiyor ve kuşları görüyorsun.
+Anadolu\'da bir öğrenme serüvenine başladın. Her hap bilgiyi okudukça, dağları tırmanıyor, ormanları geçiyor ve kuşları görüyorsun.
 
 🎯 **Başarımlarını Takip Et:**
 """)
