@@ -65,7 +65,7 @@ mevcut_dersler_listesi = list(mevcut_dersler_dict.keys())
 tum_dersler = ["Türkçe", "Matematik", "Fen", "Sosyal"]
 
 # ── Arayüz ───────────────────────────────────────────────────────────────────
-st.markdown('<div class="hud-wrap"><div class="hud-title">📚 TYT HAP BİLGİ SİSTEMİ</div></div>', unsafe_allow_html=True)
+st.markdown('<div class="hud-wrap"><div class="hud-title">📚 NURİYEM TYT Yİ EZİP GEÇİYOR - SİSTEM AKTİVE OLUYOR</div></div>', unsafe_allow_html=True)
 
 c1, c2 = st.columns(2)
 with c1:
