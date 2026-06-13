@@ -181,7 +181,7 @@ if not st.session_state.onboarding_seen:
     show_onboarding()
 
 # ── UI ───────────────────────────────────────────────────────────────────────
-st.markdown('<div class="hud-wrap"><div class="hud-title">🏔️ TYT Çalışma Yolculuğu</div><div class="hud-sub">Anadolu\'da Bir Öğrenme Serüveni</div></div>', unsafe_allow_html=True)
+st.markdown('<div class="hud-wrap"><div class="hud-title">🏔️ Nuriye Hanım Şahsına TYT Çalışma Yolculuğu</div><div class="hud-sub">Anadolu\'da Bir Öğrenme Serüveni</div></div>', unsafe_allow_html=True)
 
 # Ders ve Konu Seçimi
 d1, d2, d3 = st.columns([1.5, 1.8, 1.4])
