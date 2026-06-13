@@ -317,8 +317,8 @@ Anadolu'da bir öğrenme serüvenine başladın. Her hap bilgiyi okudukça, dağ
 
 c1, c2 = st.columns([2, 1])
 with c1:
-    st.markdown(f"<div style='font-family:Poppins,sans-serif;font-size:9px;color:#7a6a5a;letter-spacing:1px;padding:10px 0;'>TYT ÇALIŞMA SİSTEMİ · ANADOLU YOLCULUĞU · MUTEDRA CO.</div>", unsafe_allow_html=True)
-with c2:
     if st.button("🔄 YENILE", key="yenile"):
         st.cache_data.clear()
         st.rerun()
+with c2:
+    st.markdown(f"<div style='font-family:Poppins,sans-serif;font-size:9px;color:#7a6a5a;letter-spacing:1px;padding:10px 0;'>TYT ÇALIŞMA SİSTEMİ · AŞK İLE YAPILDI ❤️ ANADOLU YOLCULUĞU · MUTEDRA CO. BY UMUT</div>", unsafe_allow_html=True)
