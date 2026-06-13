@@ -109,27 +109,27 @@ hr { border: none; border-top: 1px solid #a89878 !important; margin: 14px 0 !imp
 
 # Başarım Sistemi Tanımlaması
 ACHIEVEMENTS = {
-    1:   ("🐦", "Anadolu Serçesi", "Başarımına başladın"),
-    5:   ("🦅", "Kartal Yolcu", "5 hap bilgiye ulaştın"),
-    10:  ("🏔️", "Iğdır Dağı", "10 hap bilgiye vardın"),
-    15:  ("🌲", "Sarıçam Ağacı", "15 hap bilgiyle tanıştın"),
-    20:  ("⛰️", "Hazar Dağı Etekleri", "20 hap bilgiyi tamamladın"),
+    1:   ("🐦", "Anadolu Serçesini buldun", "Başarımına başladın"),
+    5:   ("🦅", "Anadolu Kartalı seni selamlıyor.", "5 hap bilgiye ulaştın"),
+    10:  ("🏔️", "Iğdır Dağına hoş geldin.", "10 hap bilgiye vardın"),
+    15:  ("🌲", "Sarıçam Ağacına su döktün.", "15 hap bilgiyle tanıştın"),
+    20:  ("⛰️", "Hazar Dağı Eteklerine geldin.", "20 hap bilgiyi tamamladın"),
     25:  ("🌳", "Meşe Ormanında Dinlendin", "25 hap bilgiye vardin"),
-    30:  ("🏜️", "Kapadokya Kaya Sarayları", "30 hap bilgiye ulaştın"),
-    35:  ("🌸", "Aksaray Çandırı Çiçeği", "35 hap bilgiyi gördün"),
-    40:  ("🪨", "Niğde Dağları Kampı", "40 hap bilgiye vardın"),
+    30:  ("🏜️", "Kapadokya Kaya Saraylarıyda gezdin.", "30 hap bilgiye ulaştın"),
+    35:  ("🌸", "Aksaray Çandırı Çiçeği kokladın.", "35 hap bilgiyi gördün"),
+    40:  ("🪨", "Niğde Dağları Kampına gittin.", "40 hap bilgiye vardın"),
     45:  ("🦜", "Kayseri Karçıkakı", "45 hap bilgiyi selamladın"),
-    50:  ("🌾", "Konya Ovası", "50 hap bilgiye ulaştın"),
-    55:  ("🏞️", "Sivas Yeşilırmak Kanyonu", "55 hap bilgiyi geçtin"),
-    60:  ("🌿", "Çorum Ballı Bahçeleri", "60 hap bilgiyi kurtardın"),
-    65:  ("🍃", "Ankara Eğrelti Ormanı", "65 hap bilgiyi gezdin"),
-    70:  ("🌰", "Kastamonu Kestaneleri", "70 hap bilgiye vardın"),
-    75:  ("🏔️", "Sinop Kara Düzü", "75 hap bilgiyi aştın"),
-    80:  ("🍵", "Rize Çay Bahçeleri", "80 hap bilgiye ulaştın"),
-    85:  ("🌅", "Ordu Platolarında Gün Batımı", "85 hap bilgiyi seyretti"),
-    90:  ("🌰", "Giresun Kestane Ormanı", "90 hap bilgide sakinlik buldun"),
-    95:  ("🦅", "Rize Yüksek Platolarında Kartal", "95 hap bilgiyi gördün"),
-    100: ("🏔️", "Anadolu Zirvesine Ulaştın", "YOLCULUK TAMAMLANDI!"),
+    50:  ("🌾", "Konya Ovasında yürüdün.", "50 hap bilgiye ulaştın"),
+    55:  ("🏞️", "Sivas Yeşilırmak Kanyonuna geçtin.", "55 hap bilgiyi geçtin"),
+    60:  ("🌿", "Çorum Ballı Bahçelerin gittin.", "60 hap bilgiyi kurtardın"),
+    65:  ("🍃", "Ankara Eğrelti Ormanına daldın.", "65 hap bilgiyi gezdin"),
+    70:  ("🌰", "Kastamonu Kestaneleri yedin.", "70 hap bilgiye vardın"),
+    75:  ("🏔️", "Sinop Kara Düzüye gittin.", "75 hap bilgiyi aştın"),
+    80:  ("🍵", "Rize Çay Bahçelerinde çay topladın.", "80 hap bilgiye ulaştın"),
+    85:  ("🌅", "Ordu Platolarında Gün Batımını izledin.", "85 hap bilgiyi seyretti"),
+    90:  ("🌰", "Giresun Kestane Ormanına gittin.", "90 hap bilgide sakinlik buldun"),
+    95:  ("🦅", "Rize Yüksek Platolarında Kartal izledin.", "95 hap bilgiyi gördün"),
+    100: ("🏔️", "Anadolu Zirvesine Ulaştın tebrikler", " GÜNLÜK YOLCULUK TAMAMLANDI!"),
 }
 
 # ── Veri Yükleme ────────────────────────────────────────────────────────────
@@ -249,7 +249,7 @@ if secilen_ders in mevcut_dersler and secilen_konu != "⏳ Yakında Eklenecek":
     b1, b2, b3, b4 = st.columns([1, 1.2, 1, 1])
     
     with b1:
-        if st.button("◀ ÖNC.", disabled=(idx == 0), key="onceki"):
+        if st.button("◀ ÖNCEKİ KART.", disabled=(idx == 0), key="onceki"):
             st.session_state.hap_idx -= 1
             st.rerun()
     
@@ -260,7 +260,7 @@ if secilen_ders in mevcut_dersler and secilen_konu != "⏳ Yakında Eklenecek":
             st.rerun()
     
     with b3:
-        if st.button("SON. ▶", disabled=(idx == toplam - 1), key="sonraki"):
+        if st.button("SONRAKİ KART. ▶", disabled=(idx == toplam - 1), key="sonraki"):
             st.session_state.hap_idx += 1
             st.session_state.toplam_hap_goruldu += 1
             st.rerun()
@@ -277,11 +277,11 @@ else:
 # ── Bilgiler ─────────────────────────────────────────────────────────────────
 st.markdown("<hr>", unsafe_allow_html=True)
 
-with st.expander("🏔️  ANADOLU'DA YOLCULUĞU ANLA"):
+with st.expander("🏔️  ANADOLU'DA YOLCULUGUN HARİTASI"):
     st.markdown("""
-**Yolculuğun Haritası:**
+**Hoşgeldin Gizemli Yolcu Nuriye Ben Yakışıklı Rehberin. Yolculuğun Haritasını veriyorum. :**
 
-Anadolu'da bir öğrenme serüvenine başladın. Her hap bilgiyi okudukça, dağları tırmanıyor, ormanları geçiyor ve kuşları görüyorsun.
+Anadolu'da bir öğrenme serüvenine başladın. Her hap bilgiyi okudukça, dağları tırmanıyor, ormanları geçiyor ve kuşları görüyorsun. Umarım hepsini bulursun bol şans.
 
 🎯 **Başarımlarını Takip Et:**
 """)
