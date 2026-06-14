@@ -1,4 +1,4 @@
-import streamlit as st
+code_content = """import streamlit as st
 import json
 import random
 
@@ -9,9 +9,9 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-st.markdown("""<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">""", unsafe_allow_html=True)
+st.markdown(\"\"\"<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">\"\"\", unsafe_allow_html=True)
 
-st.markdown("""<style>
+st.markdown(\"\"\"<style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body, .stApp { background: linear-gradient(135deg, #f4efe6 0%, #e8dcc8 100%) !important; color: #3a3a3a !important; font-family: 'Poppins', sans-serif !important; }
 .block-container { padding: 1.2rem 0.9rem 4rem !important; max-width: 780px !important; }
@@ -51,7 +51,7 @@ details > div { background: #f0e8dd !important; border: 1px solid #a89878 !impor
 [data-testid="stDecoration"] { display: none !important; }
 hr { border: none; border-top: 1px solid #a89878 !important; margin: 14px 0 !important; }
 @media (max-width: 480px) { .hud-title { font-size: 20px; letter-spacing: .5px; } .hap-text { font-size: 15px; } .stat-val { font-size: 18px; } .stButton > button { font-size: 11px !important; height: 44px !important; } }
-</style>""", unsafe_allow_html=True)
+</style>\"\"\", unsafe_allow_html=True)
 
 # Rastgele Komik & Motivasyonel Anadolu Hikayeleri (Nuriye Hanım'a Özel)
 KOMIK_HIKAYELER = [
@@ -137,7 +137,7 @@ if "daily_story" not in st.session_state:
 @st.dialog("TYT Çalışma Sistemi")
 def show_onboarding():
     emoji, baslik, mesaj = st.session_state.daily_story
-    st.markdown(f"""
+    st.markdown(f\"\"\"
     <div style="text-align: center;">
         <div style="font-size: 48px; margin-bottom: 16px;">{emoji}</div>
         <div style="font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: #5a4a3a; margin-bottom: 12px;">{baslik}</div>
@@ -148,7 +148,7 @@ def show_onboarding():
             <strong>Nuriye Hanımın</strong> şahsı için özel kodlanmıştır.
         </div>
     </div>
-    """, unsafe_allow_html=True)
+    \"\"\", unsafe_allow_html=True)
     if st.button("🚀 Yolculuğa Başla", use_container_width=True):
         st.session_state.onboarding_seen = True
         st.rerun()
@@ -156,7 +156,7 @@ def show_onboarding():
 if not st.session_state.onboarding_seen:
     show_onboarding()
 
-st.markdown('<div class="hud-wrap"><div class="hud-title">🏔️ Nuriye Hanım Şahsına TYT Çalışma Yolculuğu</div><div class="hud-sub">Anadolu'da Bir Öğrenme Serüveni</div></div>', unsafe_allow_html=True)
+st.markdown('<div class="hud-wrap"><div class="hud-title">🏔️ Nuriye Hanım Şahsına TYT Çalışma Yolculuğu</div><div class="hud-sub">Anadolu\'da Bir Öğrenme Serüveni</div></div>', unsafe_allow_html=True)
 
 d1, d2, d3 = st.columns([1.5, 1.8, 1.4])
 with d1:
@@ -194,30 +194,30 @@ if secilen_ders in mevcut_dersler and secilen_konu != "⏳ Yakında Eklenecek":
         toplam = len(hap_bilgileri)
         
         pct = round((idx + 1) / toplam * 100, 1)
-        st.markdown(f"""
+        st.markdown(f\"\"\"
 <div class="prog-wrap">
     <div class="prog-meta"><span>HAP BİLGİ İLERLEMESİ</span><span>{idx+1} / {toplam} · %{pct}</span></div>
     <div class="prog-track"><div class="prog-fill" style="width:{pct}%"></div></div>
-</div>""", unsafe_allow_html=True)
+</div>\"\"\", unsafe_allow_html=True)
         
-        st.markdown(f"""
+        st.markdown(f\"\"\"
 <div class="stat-row">
     <div class="stat-box"><div class="stat-val">{idx+1}</div><div class="stat-lbl">Şu an</div></div>
     <div class="stat-box"><div class="stat-val">{toplam}</div><div class="stat-lbl">Toplam</div></div>
     <div class="stat-box"><div class="stat-val">{st.session_state.toplam_hap_goruldu}</div><div class="stat-lbl">Toplam Görülen</div></div>
-</div>""", unsafe_allow_html=True)
+</div>\"\"\", unsafe_allow_html=True)
         
         hap_text = str(hap_bilgileri[idx]).replace("<", "&lt;").replace(">", "&gt;")
         st.markdown(f'<div class="hap-card"><div class="hap-text">{hap_text}</div></div>', unsafe_allow_html=True)
         
         if st.session_state.toplam_hap_goruldu in ACHIEVEMENTS:
             emoji, basarim, aciklama = ACHIEVEMENTS[st.session_state.toplam_hap_goruldu]
-            st.markdown(f"""
+            st.markdown(f\"\"\"
 <div class="achievement-banner">
     <div class="achievement-emoji">{emoji}</div>
     <div class="achievement-text">{basarim}</div>
     <div class="achievement-desc">{aciklama}</div>
-</div>""", unsafe_allow_html=True)
+</div>\"\"\", unsafe_allow_html=True)
         
         b1, b2, b3, b4 = st.columns([1, 1.2, 1, 1])
         
@@ -250,41 +250,41 @@ else:
 st.markdown("<hr>", unsafe_allow_html=True)
 
 with st.expander("🏔️  ANADOLU'DA YOLCULUGUN HARİTASI"):
-    st.markdown("""
+    st.markdown(\"\"\"
 **Hoşgeldin Gizemli Yolcu Nuriye. Yolculuğun Haritasını veriyorum:**
 
 Anadolu'da bir öğrenme serüvenine başladın. Her hap bilgiyi okudukça, dağları tırmanıyor, ormanları geçiyor ve kuşları görüyorsun. Bol şans!
 
 🎯 **Başarımlarını Takip Et (1-1000):**
-""")
+\"\"\")
     
     col1, col2, col3, col4 = st.columns(4)
     with col1:
-        st.markdown("""
+        st.markdown(\"\"\"
 🐦 1-100: Kuş Dönemeci
 🌲 101-200: Orman Gezinti
 🏔️ 201-300: Dağ Tırmanışı
 ⛰️ 301-400: Tepe Yolculuğu
-        """)
+        \"\"\")
     with col2:
-        st.markdown("""
+        st.markdown(\"\"\"
 🌿 401-500: Bitki Tanımı
 🏞️ 501-600: Manzara Seyri
 🦅 601-700: Yüksek Kuşlar
 🌸 701-800: Çiçek Bahçeleri
-        """)
+        \"\"\")
     with col3:
-        st.markdown("""
+        st.markdown(\"\"\"
 🌾 801-900: Tarla Yolculuğu
 🏔️ 901-950: Zirveye Yükseliş
 👑 950-1000: ANADOLU USTASI!
-        """)
+        \"\"\")
     with col4:
-        st.markdown(f"""
+        st.markdown(f\"\"\"
 💪 Toplam Bölüm: 40
 📊 Her 50 hap: Yeni başarım
 🎯 Hedefin: 1000 HAP
-""")
+\"\"\")
 
 c1, c2 = st.columns([2, 1])
 with c1:
@@ -295,3 +295,8 @@ with c1:
         st.rerun()
 with c2:
     st.markdown(f"<div style='font-family:Poppins,sans-serif;font-size:9px;color:#7a6a5a;letter-spacing:1px;padding:10px 0;'>TYT ÇALIŞMA SİSTEMİ · AŞK İLE YAPILDI ❤️ · MUTEDRA CO.</div>", unsafe_allow_html=True)
+"""
+
+with open("tyt_calisma_sistemi.py", "w", encoding="utf-8") as f:
+    f.write(code_content)
+print("File written successfully.")
