@@ -293,4 +293,4 @@ with c1:
         st.cache_data.clear()
         st.rerun()
 with c2:
-    st.markdown(f"<div style='font-family:Poppins,sans-serif;font-size:9px;color:#7a6a5a;letter-spacing:1px;padding:10px 0;text-align:right;'>MUTEDRA CO.</div>", unsafe_allow_html=True)
+  st.markdown(f"<div style='font-family:Poppins,sans-serif;font-size:9px;color:#7a6a5a;letter-spacing:1px;padding:10px 0;'>TYT ÇALIŞMA SİSTEMİ · AŞK İLE YAPILDI ❤️ · MUTEDRA CO.</div>", unsafe_allow_html=True)
