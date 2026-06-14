@@ -1,4 +1,4 @@
-import streamlit as st
+code_content = """import streamlit as st
 import json
 import random
 
@@ -9,9 +9,9 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-st.markdown("""<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">""", unsafe_allow_html=True)
+st.markdown(\"\"\"<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">\"\"\", unsafe_allow_html=True)
 
-st.markdown("""<style>
+st.markdown(\"\"\"<style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body, .stApp { background: linear-gradient(135deg, #f4efe6 0%, #e8dcc8 100%) !important; color: #3a3a3a !important; font-family: 'Poppins', sans-serif !important; }
 .block-container { padding: 1.2rem 0.9rem 4rem !important; max-width: 780px !important; }
@@ -51,51 +51,80 @@ details > div { background: #f0e8dd !important; border: 1px solid #a89878 !impor
 [data-testid="stDecoration"] { display: none !important; }
 hr { border: none; border-top: 1px solid #a89878 !important; margin: 14px 0 !important; }
 @media (max-width: 480px) { .hud-title { font-size: 20px; letter-spacing: .5px; } .hap-text { font-size: 15px; } .stat-val { font-size: 18px; } .stButton > button { font-size: 11px !important; height: 44px !important; } }
-</style>""", unsafe_allow_html=True)
+</style>\"\"\", unsafe_allow_html=True)
 
-# Rastgele Komik Hikayeler
 KOMIK_HIKAYELER = [
-    ("🐦", "Serçenin Ders Notu", "Anadolu Serçesi sana 'Hap bilgiler kısa ve etkili olmalı' dedi. Haklı mı? Tabii ki haklı!"),
-    ("🦅", "Kartalın Tavsiyesi", "Yüksek uçmak için iyiyotlara ihtiyaç var. Sen de böyle yapıyorsun!"),
-    ("🏔️", "Dağın İntikamı", "Dağ: 'Beni tırmanmak zor, ama zirveye ulaşan hiç pişman olmaz.' Hazır mısın?"),
-    ("🌲", "Ağacın Hikayesi", "Orman Şefi Meşe Ağacı: 'Kütleşme yavaş ama güçlü olur. Sen de öyle çalış!'"),
-    ("🌾", "Çiftçinin Sırrı", "Çiftçi: 'Topu kuru, suyu bol, ve sabırla bekle. Sonra hasat zamanı gelir.'"),
-    ("🦜", "Papağanın Tekrarı", "Karçıkakı: 'Bildiklerini tekrar söylenince, unutulan kapı açılır.'"),
-    ("⛰️", "Dağ Tırmanışı", "Rehber: 'Her adım önemli, aceleci olma. Zirve seni bekliyor.'"),
-    ("🌸", "Çiçeğin Dersi", "Çandırı Çiçeği: 'Ben bahar bekledi. Sen ne bekliyor?'"),
-    ("🍵", "Çay Bahçesinde Hikaye", "Torna: 'Sıcak suyla ıslatılınca lezzetliyim. Sen de zorluktan güç alıyor musun?'"),
-    ("🌅", "Gün Batımında Dönem", "Ordu Platosu: 'Her gün biter, ama yeni bir gün doğar. Devam et!'"),
-    ("🎯", "Av Kuşunun Dikkati", "Şahin: 'Hedefi belirle, çabukça har ve ıskalamaz. Hap bilgiyi öyle oku.'"),
-    ("🏞️", "Kanyonun Yankısı", "Yeşilırmak: 'Bağırsan sesi geri dönüyor. Çalışsan da sonucu dönüyor.'"),
-    ("🌿", "Ormanın Derinliği", "Toros Ormanı: 'Içimde kaybolabilirsin, ama çıkışa varırsan çok güzel olur.'"),
-    ("🦌", "Ceylanın Hızı", "Ceylan: 'Hızlı ama tekinlemli. Ders geçmek için her türü deneme!'"),
-    ("🪨", "Kaya Sarayları", "Kapadokya: 'Zamanın üzerine yazılmış hikayelerim var. Senin hap bilgiler de sana yazılmış.'"),
+    ("🐦", "Anadolu Serçesinin Akıl Defteri", "Nuriye Hanım! Köy meydanındaki bilge serçe telli duvaklı defterine bakıp dedi ki: 'Formüller kısa, çaylar taze olmalı!' Haklı mı? Sonuna kadar haklı! Hadi başla!"),
+    ("🦅", "Yörük Ali'nin Kartalı", "Toroslar'da bir Yörük Ali varmış, kartalına sormuş: 'Bu sınavı kim geçer?' Kartal da göklerden süzülüp pençesiyle Nuriye Hanım'ın masasını işaret etmiş! Rüzgarın bol olsun!"),
+    ("🏔️", "Erciyes Dağı'nın İnadı", "Erciyes Dağı dile gelmiş: 'Beni aşmak zordur ama Nuriye Hanım'ın azmini görünce tepemdeki karlar eridi, utancımdan dumanımı sakladım' demiş. Dağlar önünde eğiliyor!"),
+    ("🌲", "Asırlık Meşe Ağacının Fısıltısı", "Köyün girişindeki 500 yıllık meşe ağacı köklerini oynatıp fısıldamış: 'Ben bu yaşımda böyle kararlı ders çalışan görmedim. Nuriye Hanım bu hızla giderse yakında beni de geçer!'"),
+    ("🌾", "Konya Ovası'ndaki Gizemli Traktör", "Konyalı bir dayı traktörle tarlayı sürerken Nuriye Hanım'ın hap bilgi okuma hızını görmüş. Traktörü stop ettirip 'Yahu biz dönüm başı bu kadar hızlı gidemedik, maşallah!' diyerek şapka çıkarmış!"),
+    ("🦜", "Çaycı Hüseyin Efendi'nin Papağanı", "Sivaslı Çaycı Hüseyin'in papağanı normalde sadece 'Çay ver' dermiş. Ama Nuriye Hanım'ı görünce 'Nuriye Hanım yine başladı, paragraf soruları kaçacak delik arasın!' diye bağırmış!"),
+    ("⛰️", "Horozlu Dede'nin Kehaneti", "Denizli'nin meşhur horozu bu sabah Nuriye Hanım için erken ötmüş: 'Üüü-ürü-üüü! Nuriye Hanım bugün TYT'yi dize getirecek!' Duymayan kalmasın!"),
+    ("🌸", "Isparta Gülü'nün Kıskançlığı", "Isparta'nın en güzel gülü Nuriye Hanım'ın ders masasına bakıp boynunu bükmüş: 'Onun zihnindeki bilgi çiçekleri benden daha güzel kokuyor, pes ediyorum' demiş. Çiçekler açsın zihninde!"),
+    ("🍵", "Kıraathanedeki Büyük Hakemlik", "Erzurumlu amcalar kahvehanede okeyi bırakmış senin başarımları tartışıyor: 'Hele bakın, Nuriye Hanım 1000 hap bilgiye doğru koşir, dadaşlık budur işte!' Çaylar şirketten!"),
+    ("🌅", "Karadeniz Takası ve Fırtına", "Sürmeneli Temel Reis fırtınada dalgalarla boğuşurken Nuriye Hanım'ın ders çalışma azmini duymuş: 'Ula ben bu dalgalarla baş ederim de Nuriye Hanım'ın bilgi fırtınasının önünde duramam!' demiş."),
+    ("🎯", "Kayserili Esnafın Ticari Dehası", "Kayserili sarraf Nuriye Hanım'ı ders çalışırken izlemiş ve yanındakine fısıldamış: 'Bu hanımdaki azim ve bilgi altından daha değerli, buraları satın alır valla!' Yatırım tavsiyesidir, devam!"),
+    ("🏞️", "Yeşilırmak'ın Ters Akma İhtimali", "Amasya'daki Yeşilırmak Nuriye Hanım'ın kararlılığını görünce şaşkınlıktan ters akmaya karar vermiş: 'Nuriye Hanım sınavı altüst ederken ben düz mü akacağım?' demiş!"),
+    ("🍉", "Diyarbakır Karpuzunun İtirafı", "150 kiloluk dev Diyarbakır karpuzu dile gelmiş: 'Ben Anadolu'nun en ağırıyım sanıyordum, meğer Nuriye Hanım'ın zihnindeki hap bilgilerin ağırlığı benimkinden fazlaymış' demiş!"),
+    ("🏺", "Hattuşaş Güneşi Kursu", "Hitit kralı rüyasında Nuriye Hanım'ı görmüş ve vezirine emretmiş: 'Hemen bir tablet kazıyın, gelecekte Nuriye Hanım adında bir bilge tüm TYT konularını tek nefeste fethedecek!' Tarih seni yazıyor!"),
+    ("🐈", "Van Kedisinin Renkli Gözleri", "Van kedisi Nuriye Hanım'ın ders notlarına bakarken heyecandan gözlerinin rengini şaşırmış! 'Ablam öyle bir konsantre olmuş ki, bende ne mavi kaldı ne yeşil!' diyerek mırıldanmış."),
+    ("🫓", "Varto Tandır Ekmeğinin Sıcaklığı", "Muşlu teyze tandırdan sıcak ekmeği çıkarırken demiş ki: 'Bu ekmek sıcak ama Nuriye Hanım'ın ders çalışma aşkı ve motivasyonu bu tandır ateşinden de sıcak!' Afiyet olsun, zihnin açık olsun!"),
+    ("🧀", "Kars Kaşarının Olgunlaşma Sırrı", "Kars'taki peynir ustası sırrını açıklamış: 'Biz peyniri mahzende bekletiriz ama asıl olgunlaşma Nuriye Hanım'ın zihnindeki hap bilgilerin demlenmesi gibidir, sabırla ve emekle olur!'"),
+    ("🏺", "Çömlekçi Ustanın Çırağı", "Avanoslu çömlek ustası çamura şekil verirken çırağına bağırmış: 'Oğlum elini gevşek tutma! Bak Nuriye Hanım derslerine nasıl sıkı sarılıyor, örnek al ablanı!'"),
+    ("🎠", "Nasreddin Hoca'nın Yeni Müjdesi", "Nasreddin Hoca göle maya çalmaktan vazgeçmiş, gelmiş Nuriye Hanım'ın masasına bakmış: 'Yahu Hoca, bu göl maya tutar mı?' diyenlere, 'Gölü bırakın, Nuriye Hanım bu azimle TYT'yi kesin tutturur!' demiş."),
+    ("🌶️", "Maraş Biberinin Acı İtirafı", "Kahramanmaraş'ın en acı biberi Nuriye Hanım'ın deneme çözme hızını görünce terlemiş: 'Ben insanları yakardım ama Nuriye Hanım'ın hırsı beni bile kavurdu!' demiş. Yolun açık olsun!"),
+    ("🎻", "Aşık Veysel'in Sazının Teli", "Sazın teli kendi kendine titremeye başlamış. Demişler ne oluyor? Saz dile gelmiş: 'Nuriye Hanım 1000 başarıma doğru emin adımlarla yürüyor, ona güzel bir fon müziği yapıyorum!'"),
+    ("🏰", "Ankara Kalesi'nin Güvencesi", "Ankara Kalesi'nin burçlarındaki askerler nöbette konuşuyormuş: 'Kaleden daha sağlam ne var bu memlekette?' Biri cevap vermiş: 'Nuriye Hanım'ın TYT çalışma disiplini var, kale gibi sarsılmaz!'"),
+    ("🍇", "Erzincan Tulumu ve Üzümü", "Cimin üzümü bağından seslenmiş: 'Nuriye Hanım hap bilgileri birer birer yerken, biz burada hayranlıkla onu izliyoruz. Bu tatlı yolculuğun sonu şampiyonluk!'"),
+    ("🧵", "Bursa İpeğinin Zarafeti", "Bursa'daki ipek böceği kozasını örerken durup düşünmüş: 'Ben ilmek ilmek örüyorum ama Nuriye Hanım bilgileri zihnine daha zarif ve sağlam işliyor.' Helal olsun abla!"),
+    ("🍯", "Anzer Arısının Kararlılığı", "Kaçkarlar'daki Anzer arısı en şifalı çiçeği ararken Nuriye Hanım'ın masasına konmuş: 'Ben bin çiçekten bal topluyorum ama Nuriye Hanım bin hap bilgiden gelecek inşa ediyor, asıl şifa onda!'")
 ]
 
+# 1'den 1000'e kadar tam 42 adet eşsiz başarım (Her 25 hap bilgide bir)
 ACHIEVEMENTS = {
-    1: ("🐦", "Anadolu Serçesini buldun", "Başarımına başladın"),
-    10: ("🏔️", "Iğdır Dağına hoş geldin", "10 hap bilgiye vardın"),
-    25: ("🌳", "Meşe Ormanında Dinlendin", "25 hap bilgiye vardın"),
-    50: ("🌾", "Konya Ovasında yürüdün", "50 hap bilgiye ulaştın"),
-    100: ("🎯", "Yüzüncü Başarım Kutlandı!", "100 hap bilgiyi tamamladın"),
-    150: ("🦅", "Kartal Gökyüzünde", "150 hap bilgiye vardın"),
-    200: ("🎯", "İkiyüzüncü Başarım!", "200 hap bilgiyi tamamladın"),
-    250: ("🏞️", "Kanyonun Yankısında", "250 hap bilgiye ulaştın"),
-    300: ("🎯", "Üçyüzüncü Başarım Kriteri!", "300 hap bilgiyi tamamladın"),
-    350: ("🌸", "Çiçek Bahçelerinde Ruh Dinlemesi", "350 hap bilgiye vardın"),
-    400: ("🎯", "Dörtyüzüncü Başarım!", "400 hap bilgiyi tamamladın"),
-    450: ("🏔️", "Zirveye Yakındır", "450 hap bilgiye ulaştın"),
-    500: ("👑", "ANADOLU ZIRVESI 500!", "GÜNLÜK YOLCULUK BAŞARISI TESCİL EDİLDİ!"),
-    550: ("🦅", "Yüksekten Bakanlar Kulübü", "550 hap bilgiye vardın"),
-    600: ("🎯", "Altıyüzüncü Başarım!", "600 hap bilgiyi tamamladın"),
-    650: ("🌿", "Ormanın Derinliklerinde", "650 hap bilgiye ulaştın"),
-    700: ("🎯", "Yediyüzüncü Başarım!", "700 hap bilgiyi tamamladın"),
-    750: ("⛰️", "Dağların İnsan Dostu", "750 hap bilgiye vardın"),
-    800: ("🎯", "Sekizyüzüncü Başarım Kutlama!", "800 hap bilgiyi tamamladın"),
-    850: ("🌲", "Orman Saymanı", "850 hap bilgiye ulaştın"),
-    900: ("🎯", "Dokuzyüzüncü Başarım!", "900 hap bilgiyi tamamladın"),
-    950: ("🦅", "Binden Bir Adım Uzak", "950 hap bilgiye vardın"),
-    1000: ("👑", "ANADOLU USTASI 1000 HAP!", "EPIK YOLCULUK TAMAMLANDI - SEN BİR EFSANESİN!"),
+    1: ("🐦", "Anadolu Serçesini Buldun", "Yolculuk bin adımlık bir yürüyüşle başlar, ilk hap bilgi cebinizde Nuriye Hanım!"),
+    10: ("🏔️", "Iğdır Dağı Etekleri", "10 hap bilgi tamamlandı! Zirve uzakta görünebilir ama ilk tırmanış başarıyla başladı."),
+    25: ("🌳", "Meşe Ormanında Dinlenme", "25 hap bilgiye ulaştın. Anadolu'nun asırlık çınarları azmine şahit oluyor."),
+    50: ("🌾", "Konya Ovası Bereketleri", "50 hap bilgi! Bilgi tarlanı sabırla ektin, bereketli başaklar yeşermeye başladı."),
+    75: ("🐎", "Kapadokya Yılkı Atları", "75 hap bilgi! Zihnin uçsuz bucaksız bozkırda özgürce koşan atlar gibi hızlandı."),
+    100: ("🎯", "Yüzüncü Yıl Kahramanı", "100 hap bilgiyi tamamladın! Bu sarsılmaz azim tüm Anadolu'ya örnek olur."),
+    125: ("🍯", "Kars Karakovan Balı", "125 hap bilgi! Emeklerin petek petek doluyor, zihnin şifa buluyor."),
+    150: ("🦅", "Toros Kartalı Kanat Çırpışı", "150 hap bilgi! Artık TYT konularına çok daha yükseklerden ve net bakıyorsun."),
+    175: ("🏺", "Avanos Çömlek Ustası", "175 hap bilgi! Bilgiyi elinde bir kil gibi yoğuruyor, ona şekil veriyorsun."),
+    200: ("🧿", "Nazar Boncuğu Koruması", "200 hap bilgi! Kem gözlere şiş, bu motivasyon ve odaklanma hiç bozulmasın!"),
+    225: ("🍉", "Diyarbakır Karpuzu Bereketi", "225 hap bilgi! Hafızan o kadar genişledi ki, içine koca bir medeniyet sığar."),
+    250: ("🏞️", "Yeşilırmak Kanyonu Yankısı", "250 hap bilgi! Çalışmalarının yankısı derin vadilerden tüm şehirlere duyuluyor."),
+    275: ("🕌", "Selimiye Kubbesi İhtişamı", "275 hap bilgi! Zihninin mimarisi tıpkı Sinan'ın eserleri gibi kusursuz yükseliyor."),
+    300: ("🍵", "Kıraathane Bilgesi", "300 hap bilgi tamamlandı! Muhtar ve tüm ahali senin bu muazzam hızını konuşuyor."),
+    325: ("🧶", "Hereke Halısı Dokuyucusu", "325 hap bilgi! Her bir formülü ve kuralı zihnine ilmek ilmek, altın sırmalarla işledin."),
+    350: ("🌸", "Isparta Gül Bahçeleri Kokusu", "350 hap bilgi! Zihninde açan taze bilgi güllerinin kokusu tüm engelleri unutturdu."),
+    375: ("🏔️", "Ağrı Dağı Zirvesi", "375 hap bilgi! Anadolu'nun en yüksek tepesine adım adım, nefes nefese tırmanıyorsun."),
+    400: ("🏰", "Ankara Kalesi Zirve Burçları", "400 hap bilgi geride kaldı. Kaleyi kalbinden ve zihninden fethettin Nuriye Hanım!"),
+    425: ("🫓", "Varto Tandır Ekmeği Sıcaklığı", "425 hap bilgi! Başarı sıcak sıcak tütüyor, emeklerinin kokusu her yeri sardı."),
+    450: ("⛰️", "Erciyes'in Dumanlı Zirvesi", "450 hap bilgiye ulaştın. Bulutların üzerindesin, zafere adımlar kaldı."),
+    475: ("🧀", "Ezine Peyniri Ustası", "475 hap bilgi! Bilgilerin zamanla demlendi, keskinleşti ve en lezzetli halini aldı."),
+    500: ("👑", "Anadolu Zirvesi Yarıyıl", "500 hap bilgi! Yolun tam yarısı bitti, altın harflerle adın zirveye kazındı!"),
+    525: ("🎻", "Aşık Veysel'in Sazı", "525 hap bilgi! Uzun ince bu yolda artık ustalıkla ve türküler eşliğinde yürüyorsun."),
+    550: ("🎠", "Eskişehir Lületaşı Zarafeti", "550 hap bilgi! Zihnini bir sanat eseri gibi ilmek ilmek ve ince ince işliyorsun."),
+    575: ("🌊", "Fırtına Deresi Coşkusu", "575 hap bilgi! Hiçbir engel tanımadan, Karadeniz dereleri gibi coşkun akıyorsun."),
+    600: ("🌌", "Kapadokya Peri Bacaları Masalı", "600 hap bilgi! Başarın Anadolu masalları gibi büyüleyici ve benzersiz bir hal aldı."),
+    625: ("🌰", "Giresun Fındık Bahçesi", "625 hap bilgi! Çotanaklar gibi bereketli, her bilgi tanesi zihninde sağlamca kök saldı."),
+    650: ("🌿", "Toros Geyikbayırı Derinlikleri", "650 hap bilgiye ulaştın. En dik patikalar bile senin iraden karşısında düzleşti."),
+    675: ("🦁", "Aslanlı Yol Yürüyüşü", "675 hap bilgi! Hedefe doğru atılan her adım, tarihe geçen sağlam bir yürüyüş oldu."),
+    700: ("🌊", "Çoruh Nehri Akıntısı", "700 hap bilgi! Bilgi selin önüne çıkan tüm setleri, barajları yıkıp geçiyor."),
+    725: ("🧵", "Bursa İpeği Zarafeti", "725 hap bilgi! Sınav stresini ipek gibi pürüzsüz ve yumuşak bir zihinle aşıyorsun."),
+    750: ("🪕", "Gönül Dağı Yolcusu", "750 hap bilgi! Gönül dağında karlar eridi, başarı çiçekleri rengarenk açmaya başladı."),
+    775: ("🍇", "Erzincan Cimin Üzümü", "775 hap bilgi! Bu zorlu çalışma günleri, sonunda tadına doyulmaz salkımlara dönüştü."),
+    800: ("🦅", "Göbeklitepe Gözcüsü", "800 hap bilgi tamamlandı! Tarihin sıfır noktasından bugüne gelen en sarsılmaz irade."),
+    825: ("☀️", "Nemrut Dağı Gündoğumu", "825 hap bilgi! Heykellerin arasından doğan güneş gibi, zihnini aydınlattın."),
+    850: ("🌲", "Yenice Ormanları Saymanlığı", "850 hap bilgi! Sayısız bilgi fidanını hafıza ormanının en verimli toprağına diktin."),
+    875: ("⚔️", "Erzurum Dadaş İradesi", "875 hap bilgi! Palandöken'in ayazında bile üşümeyen bir dadaş gibi dimdik ayaktasın."),
+    900: ("🍯", "Kaçkar Anzer Balı Şifası", "900 hap bilgi! Bu dökülen alın terinin sonundaki ödül, en şifalı bal gibi tatlı olacak."),
+    925: ("🏹", "Malazgirt Ovası Fatihi", "925 hap bilgi! Anadolu'nun kapılarını ardına kadar bilgiyle ve azimle açıyorsun."),
+    950: ("⚡", "Dumlupınar Taarruzu", "950 hap bilgi! Son kulvar, son adımlar... Cephede mutlak zafer artık an meselesidir!"),
+    975: ("🇹🇷", "Cumhuriyet Fidanı", "975 hap bilgi! Fikri hür, irfanı hür bir zihinle zirveye sadece ramak kaldı."),
+    1000: ("👑", "ANADOLU USTASI EFSANESİ", "1000 HAP BİLGİ BİTTİ! Destan yazıldı, Nuriye Hanım TYT'nin mutlak efsanesi oldunuz!")
 }
 
 @st.cache_data
@@ -123,27 +152,34 @@ if "onboarding_seen" not in st.session_state:
 if "daily_story" not in st.session_state:
     st.session_state.daily_story = random.choice(KOMIK_HIKAYELER)
 
-@st.dialog("TYT Çalışma Sistemi")
-def show_onboarding():
+# BEYAZ EKRAN HATASINI ÇÖZEN TAM EKRAN (SPLASH) RENDER YAPISI
+# st.dialog bazı Streamlit sürümlerinde beyaz ekrana neden olduğundan tamamen kaldırılmıştır.
+if not st.session_state.onboarding_seen:
     emoji, baslik, mesaj = st.session_state.daily_story
-    st.markdown(f"""
-    <div style="text-align: center;">
-        <div style="font-size: 48px; margin-bottom: 16px;">{emoji}</div>
-        <div style="font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: #5a4a3a; margin-bottom: 12px;">{baslik}</div>
-        <div style="font-family: 'Poppins', sans-serif; font-size: 13px; color: #5a4a3a; line-height: 1.6;">
+    st.markdown(f\"\"\"
+    <div style="text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #f9f4ed 0%, #f0e8dd 100%); border-radius: 20px; border: 2px solid #a89878; margin: 20px auto; box-shadow: 0 10px 25px rgba(0,0,0,0.1); max-width: 600px;">
+        <div style="font-size: 54px; margin-bottom: 16px;">{emoji}</div>
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; color: #5a4a3a; margin-bottom: 12px;">{baslik}</div>
+        <div style="font-family: 'Poppins', sans-serif; font-size: 14px; color: #5a4a3a; line-height: 1.6;">
             {mesaj}
             <br><br>
+            <span style="font-size: 11px; color: #8b6f47;">
             <strong>Mutedra Co.</strong> tarafından<br>
             <strong>Nuriye Hanımın</strong> şahsı için özel kodlanmıştır.
+            </span>
         </div>
     </div>
-    """, unsafe_allow_html=True)
-    if st.button("🚀 Yolculuğa Başla", use_container_width=True):
-        st.session_state.onboarding_seen = True
-        st.rerun()
+    \"\"\", unsafe_allow_html=True)
+    
+    st.markdown("<br>", unsafe_allow_html=True)
+    c1, c2, c3 = st.columns([1, 2, 1])
+    with c2:
+        if st.button("🚀 Yolculuğa Başla", use_container_width=True):
+            st.session_state.onboarding_seen = True
+            st.rerun()
+    # Ana uygulamanın render edilmesini engelleyerek beyaz ekran/üst üste binme çakışmasını önler
+    st.stop()
 
-if not st.session_state.onboarding_seen:
-    show_onboarding()
 
 st.markdown('<div class="hud-wrap"><div class="hud-title">🏔️ Nuriye Hanım Şahsına TYT Çalışma Yolculuğu</div><div class="hud-sub">Anadolu\'da Bir Öğrenme Serüveni</div></div>', unsafe_allow_html=True)
 
@@ -183,30 +219,30 @@ if secilen_ders in mevcut_dersler and secilen_konu != "⏳ Yakında Eklenecek":
         toplam = len(hap_bilgileri)
         
         pct = round((idx + 1) / toplam * 100, 1)
-        st.markdown(f"""
+        st.markdown(f\"\"\"
 <div class="prog-wrap">
     <div class="prog-meta"><span>HAP BİLGİ İLERLEMESİ</span><span>{idx+1} / {toplam} · %{pct}</span></div>
     <div class="prog-track"><div class="prog-fill" style="width:{pct}%"></div></div>
-</div>""", unsafe_allow_html=True)
+</div>\"\"\", unsafe_allow_html=True)
         
-        st.markdown(f"""
+        st.markdown(f\"\"\"
 <div class="stat-row">
     <div class="stat-box"><div class="stat-val">{idx+1}</div><div class="stat-lbl">Şu an</div></div>
     <div class="stat-box"><div class="stat-val">{toplam}</div><div class="stat-lbl">Toplam</div></div>
     <div class="stat-box"><div class="stat-val">{st.session_state.toplam_hap_goruldu}</div><div class="stat-lbl">Toplam Görülen</div></div>
-</div>""", unsafe_allow_html=True)
+</div>\"\"\", unsafe_allow_html=True)
         
         hap_text = str(hap_bilgileri[idx]).replace("<", "&lt;").replace(">", "&gt;")
         st.markdown(f'<div class="hap-card"><div class="hap-text">{hap_text}</div></div>', unsafe_allow_html=True)
         
         if st.session_state.toplam_hap_goruldu in ACHIEVEMENTS:
             emoji, basarim, aciklama = ACHIEVEMENTS[st.session_state.toplam_hap_goruldu]
-            st.markdown(f"""
+            st.markdown(f\"\"\"
 <div class="achievement-banner">
     <div class="achievement-emoji">{emoji}</div>
     <div class="achievement-text">{basarim}</div>
     <div class="achievement-desc">{aciklama}</div>
-</div>""", unsafe_allow_html=True)
+</div>\"\"\", unsafe_allow_html=True)
         
         b1, b2, b3, b4 = st.columns([1, 1.2, 1, 1])
         
@@ -239,47 +275,26 @@ else:
 st.markdown("<hr>", unsafe_allow_html=True)
 
 with st.expander("🏔️  ANADOLU'DA YOLCULUGUN HARİTASI"):
-    st.markdown("""
+    st.markdown(\"\"\"
 **Hoşgeldin Gizemli Yolcu Nuriye. Yolculuğun Haritasını veriyorum:**
 
 Anadolu'da bir öğrenme serüvenine başladın. Her hap bilgiyi okudukça, dağları tırmanıyor, ormanları geçiyor ve kuşları görüyorsun. Bol şans!
 
 🎯 **Başarımlarını Takip Et (1-1000):**
-""")
-    
-    col1, col2, col3, col4 = st.columns(4)
-    with col1:
-        st.markdown("""
-🐦 1-100: Kuş Dönemeci
-🌲 101-200: Orman Gezinti
-🏔️ 201-300: Dağ Tırmanışı
-⛰️ 301-400: Tepe Yolculuğu
-        """)
-    with col2:
-        st.markdown("""
-🌿 401-500: Bitki Tanımı
-🏞️ 501-600: Manzara Seyri
-🦅 601-700: Yüksek Kuşlar
-🌸 701-800: Çiçek Bahçeleri
-        """)
-    with col3:
-        st.markdown("""
-🌾 801-900: Tarla Yolculuğu
-🏔️ 901-950: Zirveye Yükseliş
-👑 950-1000: ANADOLU USTASI!
-        """)
-    with col4:
-        st.markdown(f"""
-💪 Toplam Bölüm: 40
-📊 Her 25 hap: Yeni başarım
-🎯 Hedefin: 1000 HAP
-""")
+Her 25 hap bilgide bir yeni başarım açılır.
+\"\"\")
 
 c1, c2 = st.columns([2, 1])
 with c1:
     if st.button("🔄 YENILE & YENİ HİKAYE", key="yenile"):
         st.session_state.daily_story = random.choice(KOMIK_HIKAYELER)
+        st.session_state.onboarding_seen = False
         st.cache_data.clear()
         st.rerun()
 with c2:
     st.markdown(f"<div style='font-family:Poppins,sans-serif;font-size:9px;color:#7a6a5a;letter-spacing:1px;padding:10px 0;'>TYT ÇALIŞMA SİSTEMİ · AŞK İLE YAPILDI ❤️ · MUTEDRA CO.</div>", unsafe_allow_html=True)
+"""
+
+with open("tyt_calisma_sistemi_v2.py", "w", encoding="utf-8") as f:
+    f.write(code_content)
+print("File generated successfully.")
