@@ -258,7 +258,7 @@ with st.expander("🏔️  ANADOLU'DA YOLCULUGUN HARİTASI"):
 Anadolu'da bir öğrenme serüvenine başladın. Her hap bilgiyi okudukça, dağları tırmanıyor, ormanları geçiyor ve kuşları görüyorsun. Bol şans!
 
 🎯 **Başarımlarını Takip Et (1-1000):**
-Her 25 hap bilgide bir yeni başarım açılır. Toplam 42 Eşsiz Başarım mevcuttur.
+Her ilerlemede bir yeni başarım açılır. Toplam 1000 Eşsiz Başarım mevcuttur.
 """)
 
 c1, c2 = st.columns([2, 1])
