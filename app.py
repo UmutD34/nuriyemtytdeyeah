@@ -234,6 +234,7 @@ def show_onboarding():
             <br><br>
             <strong>Mutedra Co.</strong> tarafından<br>
             <strong>Nuriye Hanımın</strong> şahsı için özel kodlanmıştır.
+            <strong>Hoşgeldin</strong> Sultanlar sultanı kraliçeler kraliçesi, prenseslere taç giydiren !
         </div>
     </div>
     """, unsafe_allow_html=True)
