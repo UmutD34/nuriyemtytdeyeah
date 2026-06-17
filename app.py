@@ -234,7 +234,7 @@ def show_onboarding():
             <br><br>
             <strong>Mutedra Co.</strong> tarafından<br>
             <strong>Nuriye Hanımın</strong> şahsı için özel kodlanmıştır.
-            <strong>Hoşgeldin</strong> Sultanlar sultanı kraliçeler kraliçesi, prenseslere taç giydiren !
+            <strong>Hoşgeldin</strong> Sultanlar sultanı kraliçeler kraliçesi, prenseslere taç giydiren ! Rize'nin, Trabzonun, Bagdat'ın, İstanbul'un, Venedik'in ve Roma'nın Sultanı <strong> Nuriye sultan.</strong> 
         </div>
     </div>
     """, unsafe_allow_html=True)
