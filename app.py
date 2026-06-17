@@ -98,7 +98,58 @@ KOMIK_HIKAYELER = [
     ("🍎", "Amasya'nın Misket Elması", "Dalında kızaran Amasya elması utançla yaprakların arkasına saklandı: 'Benim yarım kırmızı yarım sarı, ama Nuriye Hanım'ın TYT hazırlığı eksiksiz, tas tamam! Benim tadım bile onun zaferi yanında ekşi kalır.'"),
     ("🐐", "Ankara'nın İnatçı Tiftik Keçisi", "Bozkırın dik yamaçlarında gezen keçi meledi: 'Benim inadım Anadolu'da meşhurdur sanırdım, ta ki Nuriye Hanım'ın anlamadığı konunun üstüne gidişini görene kadar. Ablamdaki bu entelektüel inat, taşı bile deler!'"),
     ("🌊", "Boğazın Asi Lüferi", "İstanbul Boğazı'nın hırçın lüferi akıntıya kafa tutarken mırıldandı: 'Sert akıntıya karşı durmak yürek ister! Nuriye Hanım o sınav stresinin akıntısını zekasıyla öyle bir yardı ki, bana bile dalga dalga ders verdi!'"),
-    ("🌿", "Karadeniz'in İnatçı Çay Filizi", "Dik yamaçlarda yağmur çamur dinlemeden açan filiz gülümsedi: 'Siste ve fırtınada yeşermek maharet ister. Ama Nuriye Hanım'ın şu masa başında dirsek çürüterek yeşerttiği umutlar, benim en taze yaprağımdan daha destansı!'" )
+    ("🌿", "Karadeniz'in İnatçı Çay Filizi", "Dik yamaçlarda yağmur çamur dinlemeden açan filiz gülümsedi: 'Siste ve fırtınada yeşermek maharet ister. Ama Nuriye Hanım'ın şu masa başında dirsek çürüterek yeşerttiği umutlar, benim en taze yaprağımdan daha destansı!'"),
+    ("🦌", "Bolu Dağları'nın Çekingen Karacası", "Bolu ormanlarında ürkek bir karaca dalların arasından Nuriye Hanım'ın masasına bakmış: 'Ben en küçük hışırtıda kaçarım, ama bu hanımın kararlılığı beni bile meraktan yerimde çiviledi. Kaçmıyorum, izliyorum!' demiş."),
+    ("🐪", "Aksaray'ın Asil Develeri", "Tuz Gölü kenarında kervan kuran develer mırıldanmış: 'Biz susuz günlerce yürürüz ama Nuriye Hanım'ın azmi bizden bile dayanıklı. Bu kervan onu çölün sonuna, başarıya kadar taşır!' demişler."),
+    ("🦫", "Sakarya Nehri'nin Çalışkan Kunduzu", "Akarsu kıyısında set ören kunduz durup bakmış: 'Ben dal dal taşıyıp set kuruyorum, Nuriye Hanım ise hap bilgi bilgi zihninde bir kale inşa ediyor. İkimiz de inatçıyız ama o benden çok daha azimli!'"),
+    ("🐺", "Yıldız Dağları'nın Bozkurdu", "Trakya'nın derin ormanlarında uluyan bozkurt durup düşünmüş: 'Sürümün lideri olmak için yıllarca savaştım. Nuriye Hanım'ın kendi zihnindeki dağınıklığa karşı verdiği savaş çok daha asil. Saygılar sana!'"),
+    ("🌵", "Nevşehir'in Dikenli Sabırlı Kaktüsü", "Kapadokya'nın kuru toprağında biten kaktüs içindeki suyu biriktirip demiş: 'Ben susuzluğa dayanmayı öğrendim, Nuriye Hanım da yorgunluğa pes etmemeyi. İkimiz de en zor toprakta yeşeriyoruz!'"),
+    ("🦋", "Datça'nın Rengarenk Kelebeği", "Yarımadanın çiçekleri arasında uçan kelebek konmuş hap bilgi defterinin üzerine: 'Ben tırtıldan kelebeğe dönüşmek için kozada beklerim, Nuriye Hanım her gün biraz daha dönüşüyor, gözümün önünde kanat çırpıyor!'"),
+    ("🐑", "Hakkari'nin Yüksek Yaylasındaki Koç", "Dağların zirvesinde otlayan koç boynuzlarını sallayıp demiş: 'Ben bu yüksekliğe yıllarca tırmandım. Nuriye Hanım'ın hedefine tırmanışı çok daha dik bir yamaçta, ama hiç durmuyor!'"),
+    ("🦦", "Köyceğiz Gölü'nün Oyuncu Su Samuru", "Sazlıklar arasında oynayan su samuru durup ciddileşmiş: 'Ben hep oyun peşindeyim ama Nuriye Hanım'ın ders masasındaki disiplinini görünce bir anlığına oyunu bıraktım, saygı duruşuna geçtim!'"),
+    ("🍒", "Afyon'un Vişne Bahçesi", "Dalında olgunlaşan vişneler kızararak fısıldamış: 'Biz tatlanmak için güneşte beklerdik, Nuriye Hanım'ın bilgisi ise her gün biraz daha olgunlaşıp en tatlı haline geliyor. Reçeli bile ona feda olsun!'"),
+    ("🦢", "Burdur Gölü'nün Zarif Kuğusu", "Pembe gölün üzerinde süzülen kuğu suya bakıp demiş: 'Bende zarafet var derdim, ama Nuriye Hanım'ın çalışırken kurduğu o sakin ve kararlı duruş benimkinden daha zarif. Eğiliyorum önünde!'"),
+    ("🐿️", "Artvin'in Telaşlı Sincabı", "Yeşil vadide fındık toplayan sincap birden durmuş: 'Ben kışa hazırlık yaparım, Nuriye Hanım da TYT'ye hazırlık yapıyor. Ama o benden bin kat daha düzenli, bir tane bile kaçırmıyor!'"),
+    ("🦅", "Munzur Vadisi'nin Kızıl Şahini", "Tunceli dağlarında süzülen şahin aniden dalış yapıp durmuş: 'Ben avımı asla kaçırmam ama Nuriye Hanım'ın hedefe kilitlenmesi benden bile keskin. O hiçbir soruyu gözünden kaçırmıyor!'"),
+    ("🌻", "Edirne'nin Geniş Ayçiçeği Tarlası", "Güneşe dönen ayçiçekleri toplu halde fısıldaşmış: 'Biz hep güneşi takip ederiz, Nuriye Hanım ise hedefini hiç gözden kaybetmeden takip ediyor. Bizden daha sadık bir yönelimi var!'"),
+    ("🐻", "Karçal Dağları'nın Boz Ayısı", "Karadeniz'in yüksek ormanlarında uyuklayan boz ayı gözünü açmış: 'Kış uykusuna yatmadan önce doyasıya hazırlanırım, Nuriye Hanım da sınava öyle doyasıya hazırlanıyor ki, kimse onu uyandıramaz!'"),
+    ("🪻", "Konya'nın Lavanta Tarlaları", "Mor dalgalar halinde uzanan lavanta tarlası kokusunu yaymış: 'Biz huzur kokusu veririz, ama Nuriye Hanım'ın azmi insana huzur değil, ateş veriyor. O kokuyu hiçbir parfüm taklit edemez!'"),
+    ("🦔", "Kastamonu Ormanının Kirpisi", "Yapraklar arasında saklanan kirpi dikenlerini açıp demiş: 'Ben tehlikede kendimi korurum, Nuriye Hanım ise tehlikeyle yüzleşip üzerine yürüyor. Onun cesareti benim dikenlerimden daha sağlam!'"),
+    ("🐂", "Yozgat'ın Boğa Güreşi Geleneği", "Çayır boğası nallarını yere vurup kişnemiş: 'Biz güreşte gücümüzü gösteririz, Nuriye Hanım ise her gün zihniyle güreşip kazanıyor. En büyük güreş bu, ben bile saygıyla izliyorum!'"),
+    ("🌼", "Mersin'in Portakal Çiçeği Kokusu", "Bahar gelince açan portakal çiçekleri tüm vadiyi sarmış: 'Biz sadece bir mevsim açarız, Nuriye Hanım'ın azmi ise dört mevsim aynı kokuda, hiç solmuyor!'"),
+    ("🦊", "Tunceli'nin Kurnaz Tilkisi", "Karanlık ormanda gizlenen tilki gözlerini kısmış: 'Ben kurnazlıkla hayatta kalırım, Nuriye Hanım ise zekasıyla her soruyu çözüyor. Benim kurnazlığım onun zekası yanında çocuk oyuncağı kalır!'"),
+    ("🪨", "Safranbolu'nun Tarihi Konak Taşları", "Yüzyıllık konağın taşları gıcırdayarak konuşmuş: 'Biz zamanın yıkımına dayandık, Nuriye Hanım da yorgunluğun yıkımına dayanıyor. İkimiz de sağlam temeller üzerine kurulduk!'"),
+    ("🐊", "Dalaman'ın Gizemli Nil Timsahı", "Sazlıkların arasında pusuya yatan timsah gözlerini kırpmış: 'Ben sabırla beklerim, ama Nuriye Hanım'ın sabrı benden bile uzun. O hiç pusuya yatmadan direkt sorunun üzerine atlıyor!'"),
+    ("🌺", "Rize'nin Çay Bahçesi Çiçekleri", "Yamaçlarda açan kır çiçekleri yağmur altında titremiş: 'Biz yağmurda büyürüz, Nuriye Hanım ise zorluklarda büyüyor. Onun büyümesi bizimkinden çok daha köklü!'"),
+    ("🦉", "Bodrum Kalesi'nin Gece Baykuşu", "Kale burçlarında tüneyen baykuş gözlerini açmış: 'Ben geceleri görürüm, Nuriye Hanım ise gece gündüz fark etmeden çalışıyor. Onun gözü benden bile keskin görüyor doğru cevabı!'"),
+    ("🐇", "Eskişehir Ovası'nın Hızlı Tavşanı", "Bozkırda koşan tavşan birden durup soluklanmış: 'Ben hızlı koşarım ama Nuriye Hanım'ın hap bilgi okuma hızı beni geçti. Artık ben onu kıskanıyorum!'"),
+    ("🌳", "Kütahya'nın Çınar Gölgesi", "Yüzyıllık çınar dallarını sallayıp gölge vermiş: 'Ben yorgunlara gölge verdim, Nuriye Hanım ise kendi geleceğine gölge değil ışık veriyor. Onun gölgesinde dinlenmek isterim!'"),
+    ("🦚", "Manisa'nın Tavus Kuşu Bahçesi", "Renkli kuyruğunu açan tavus kuşu gururla yürümüş: 'Ben güzelliğimle gösteriş yaparım, Nuriye Hanım ise emeğiyle gösteriş yapıyor. Onun emeği benim tüylerimden bin kat parlak!'"),
+    ("🐗", "Bartın Ormanının Yaban Domuzu", "Sık ormanda koşan yaban domuzu durup homurdanmış: 'Ben engelleri yararak geçerim, Nuriye Hanım da zor soruları yararak geçiyor. İkimiz de yolumuzdan dönmeyiz!'"),
+    ("🌹", "Konya'nın Mevlana Gül Bahçesi", "Türbenin avlusundaki güller başını öne eğmiş: 'Biz aşkla açarız, Nuriye Hanım'ın çalışmasındaki o sevda ise bizden bile derin. Mevlana bile gülümserdi bu azme!'"),
+    ("🦭", "Foça'nın Akdeniz Foku", "Mavi koyda yüzen fok başını sudan çıkarıp bakmış: 'Ben nesli tükenen bir türüm ama Nuriye Hanım'ın azmi gibisi de neredeyse hiç yok. O da ender bulunan bir cevher!'"),
+    ("🌾", "Çorum'un Buğday Tarlaları", "Rüzgarda dalgalanan buğday başakları eğilip kalkmış: 'Biz hasat zamanı bekleriz, Nuriye Hanım'ın da hasadı yakın. Bu kadar emek veren bir tarla mutlaka bereketli biçilir!'"),
+    ("🐴", "Iğdır Ovası'nın Yorgun Eşeği", "Tarlanın kenarında dinlenen eşek kulaklarını dikip demiş: 'Ben sırtımda ağır yükler taşırım, Nuriye Hanım'ın zihni de bir o kadar ağır bilgi taşıyor ama hiç şikayet etmiyor. Helal olsun!'"),
+    ("🦗", "Gaziantep'in Şıngırdayan Çekirgesi", "Gece bahçesinde şarkı söyleyen çekirge durup susmuş: 'Ben sadece geceleri öterim, Nuriye Hanım ise gece gündüz çalışıp kendi şarkısını yazıyor. Onun melodisi zafer marşı olacak!'"),
+    ("🌲", "Yıldız Dağları'nın Kayın Ormanı", "Sık kayın ağaçları birbirine sarılıp fısıldaşmış: 'Biz birlikte güçlüyüz, Nuriye Hanım ise tek başına bizim hepimizden güçlü. O bir orman kadar kararlı!'"),
+    ("🐍", "Kapadokya'nın Toprak Yılanı", "Peri bacalarının arasında süzülen yılan başını kaldırmış: 'Ben derimi değiştirip yenilenirim, Nuriye Hanım ise her gün biraz daha yenileniyor zihniyle. Değişim onda da kaçınılmaz, ama daha güzel!'"),
+    ("🌷", "Isparta'nın Lale Tarlaları", "Renk renk açan laleler başlarını kaldırıp gülmüş: 'Biz bir mevsim güzeliz, Nuriye Hanım'ın azmi ise hiçbir mevsime bağlı kalmadan hep güzel. O her zaman çiçek açıyor!'"),
+    ("🦅", "Beyşehir Gölü'nün Balıkçı Kartalı", "Gölün üzerinde süzülen kartal aniden dalmış: 'Ben avımı bir hamlede yakalarım, Nuriye Hanım da zor soruları bir hamlede çözüyor. İkimizin de gözü kararlı, eli hızlı!'"),
+    ("🌿", "Antalya'nın Defne Ormanı", "Akdeniz kıyısındaki defne yaprakları rüzgarda hışırdamış: 'Biz zafer tacı yapılırız eskiden, ama Nuriye Hanım'ın başına takılacak taç bizden çok daha değerli. O bir TYT zaferi kazanacak!'"),
+    ("🐖", "Bingöl Yaylalarının Sürü Köpeği", "Yaylada koyunları güden çoban köpeği havlamış: 'Ben sürümü asla kaybetmem, Nuriye Hanım da hedefini asla kaybetmiyor. İkimiz de göz kırpmadan bekleriz!'"),
+    ("🪶", "Sultansazlığı'nın Pembe Flamingosu", "Kayseri'nin sazlık gölünde duran flamingo kanat çırpmış: 'Ben binlerce kilometre göç ederim, Nuriye Hanım'ın TYT yolculuğu da uzun ve yorucu ama o asla yorulmadan uçuyor!'"),
+    ("🌴", "Alanya'nın Muz Bahçeleri", "Tropik havada büyüyen muz ağaçları yapraklarını sallamış: 'Biz sıcakta büyürüz, Nuriye Hanım'ın azmi ise hiçbir iklime bağlı değil. O her şartta yetişiyor!'"),
+    ("🐦‍⬛", "Harran'ın Kara Kuzgunu", "Şanlıurfa'nın kerpiç evlerinin üzerinde uçan kuzgun ötmüş: 'Ben bilgeliğin sembolüyüm derler, ama Nuriye Hanım'ın bilgeliği benden çok daha gerçek. O kuş gibi değil, kale gibi sağlam uçuyor!'"),
+    ("🌊", "Patara'nın Altın Kumlu Sahili", "Antalya'nın ıssız sahilinde kırılan dalgalar usulca seslenmiş: 'Biz sahile gelip geri çekiliriz, Nuriye Hanım ise hiç geri çekilmeden ileri gidiyor. O dalga gibi değil, deniz gibi kararlı!'"),
+    ("🐦", "Sapanca Gölü'nün Martısı", "Gölün üzerinde uçan martı bir çığlık atmış: 'Ben özgürlüğün simgesiyim derler, ama Nuriye Hanım'ın özgürlüğü daha büyük: bilgiyle özgürleşiyor o, ben sadece havada süzülüyorum!'"),
+    ("🦥", "Adıyaman'ın Yavaş Kaplumbağası", "Toprak yolda ağır ağır yürüyen kaplumbağa durup düşünmüş: 'Ben yavaş ama emin adımlarla yürürüm, Nuriye Hanım da bazen yavaş ilerlese de hiç durmuyor. Yarışı kazanan biziz, tavşanlar değil!'"),
+    ("🌸", "Bursa'nın İpek Böceği Bahçesi", "Dut yapraklarının arasında beslenen ipek böceği durup demiş: 'Ben kozamı örerken sabrederim, Nuriye Hanım da bilgi kozasını sabırla örüyor. İkimizin de sonu çok daha güzel bir şeye dönüşecek!'"),
+    ("🐦", "Kuşadası'nın Göçmen Leyleği", "Sonbaharda göç eden leylek son bir kez dönüp bakmış: 'Ben yorulmadan binlerce kilometre uçarım, Nuriye Hanım'ın TYT yolculuğu da uzun bir göç ama o asla pes etmeden kanat çırpıyor!'"),
+    ("🌻", "Çanakkale'nin Zeytin Dalı Sembolü", "Gelibolu yarımadasındaki zeytin ağacı dallarını sallamış: 'Ben barışın sembolüyüm, Nuriye Hanım'ın çalışması da kendi içinde bir barış kurmak. Her hap bilgide kendiyle daha çok barışıyor!'"),
+    ("🐾", "Hatay'ın Sokak Kedisi Bilgesi", "Antakya'nın taş sokaklarında gezen sokak kedisi mırlamış: 'Ben hayatta kalmayı bilirim, Nuriye Hanım ise hayatını kazanmayı biliyor. İkimiz de bu şehrin direnme gücünü taşıyoruz!'"),
+    ("🦅", "Niğde'nin Bor Kayalıklarındaki Şahin", "Kayalık tepelerde süzülen şahin gözünü kısıp aşağıya bakmış: 'Ben tepeden her şeyi görürüm, Nuriye Hanım'ın geleceği de tepeden görünüyor: parlak, net ve çok yakın!'"),
+    ("🌺", "Mardin'in Taş Evleri ve Gülleri", "Sarı taş evlerin balkonlarından sarkan güller kokusunu yaymış: 'Biz bin yıllık taşların arasında bile açarız, Nuriye Hanım da en zor şartlarda bile çalışıp açıyor. Bu topraklarda direnmek bizim ortak huyumuz!'"),
+    ("🐦", "Kızılırmak Deltası'nın Pelikanı", "Samsun kıyısındaki büyük pelikan kanatlarını açmış: 'Ben büyük gagamla balık tutarım, Nuriye Hanım ise büyük azmiyle bilgiyi yakalıyor. İkimiz de büyük hedefler için doğmuşuz!'"),
 ]
 
 ACHIEVEMENTS = {
@@ -282,7 +333,7 @@ with st.expander("🏔️  ANADOLU'DA YOLCULUGUN HARİTASI"):
 Anadolu'da bir öğrenme serüvenine başladın. Her hap bilgiyi okudukça, dağları tırmanıyor, ormanları geçiyor ve kuşları görüyorsun. Bol şans!
 
 🎯 **Başarımlarını Takip Et (1-1000):**
-Her 25 hap bilgide bir yeni başarım açılır. Toplam 1000 Eşsiz Başarım mevcuttur. Sistemde 238 Toplam işlenmiş video mevcuttur.
+Her 25 hap bilgide bir yeni başarım açılır. Toplam 1000 Eşsiz Başarım mevcuttur.
 """)
 
 c1, c2 = st.columns([2, 1])
