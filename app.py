@@ -207,7 +207,7 @@ def load_data():
 
 data = load_data()
 mevcut_dersler = data.get("dersler", {})
-tum_dersler = ["Türkçe", "Tarih", "Din kültürü ve Ahlak Bilgisi" ", "...", "..."]
+tum_dersler = ["Türkçe", "Tarih", "Din Kültürü ve Ahlak Bilgisi", "-", "-"]
 
 if "hap_idx" not in st.session_state:
     st.session_state.hap_idx = 0
@@ -234,7 +234,6 @@ def show_onboarding():
             <br><br>
             <strong>Mutedra Co.</strong> tarafından<br>
             <strong>Nuriye Hanımın</strong> şahsı için özel kodlanmıştır.
-            <strong>Hoşgeldin</strong> Sultanlar sultanı kraliçeler kraliçesi, prenseslere taç giydiren ! Rize'nin, Trabzonun, Bagdat'ın, İstanbul'un, Venedik'in ve Roma'nın ve Nice memleketlerin Sultanı <strong> Nuriye sultan.</strong> 
         </div>
     </div>
     """, unsafe_allow_html=True)
