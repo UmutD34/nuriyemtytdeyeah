@@ -207,7 +207,7 @@ def load_data():
 
 data = load_data()
 mevcut_dersler = data.get("dersler", {})
-tum_dersler = ["Türkçe", "Tarih", "Din kültürü ve Ahlak Bilgisi "(ekleniyor)" ", "...", "..."]
+tum_dersler = ["Türkçe", "Tarih", "Din kültürü ve Ahlak Bilgisi" ", "...", "..."]
 
 if "hap_idx" not in st.session_state:
     st.session_state.hap_idx = 0
