@@ -47,6 +47,7 @@ details > div { background: #f0e8dd !important; border: 1px solid #a89878 !impor
 #MainMenu, footer, header { visibility: hidden !important; }
 [data-testid="stDecoration"] { display: none !important; }
 hr { border: none; border-top: 1px solid #a89878 !important; margin: 14px 0 !important; }
+.splash-card { text-align: center; padding: 40px 20px; background: #f9f4ed; border-radius: 20px; border: 2px solid #a89878; margin: 20px auto; max-width: 500px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
 </style>""", unsafe_allow_html=True)
 
 KOMIK_HIKAYELER = [
@@ -222,11 +223,12 @@ if "onboarding_seen" not in st.session_state:
 if "daily_story" not in st.session_state:
     st.session_state.daily_story = random.choice(KOMIK_HIKAYELER)
 
-@st.dialog("TYT Çalışma Sistemi")
-def show_onboarding():
+if not st.session_state.onboarding_seen:
+    st.markdown("<br>", unsafe_allow_html=True)
     emoji, baslik, mesaj = st.session_state.daily_story
+
     st.markdown(f"""
-    <div style="text-align: center; padding-bottom: 10px;">
+    <div class="splash-card">
         <div style="font-size: 50px; margin-bottom: 12px;">{emoji}</div>
         <div style="font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: #5a4a3a; margin-bottom: 12px;">{baslik}</div>
         <div style="font-family: 'Poppins', sans-serif; font-size: 13px; color: #5a4a3a; line-height: 1.6;">
@@ -237,97 +239,98 @@ def show_onboarding():
         </div>
     </div>
     """, unsafe_allow_html=True)
-    if st.button("🚀 YOLCULUĞA BAŞLA", use_container_width=True):
-        st.session_state.onboarding_seen = True
-        st.rerun()
 
-if not st.session_state.onboarding_seen:
-    show_onboarding()
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        if st.button("🚀 YOLCULUĞA BAŞLA", use_container_width=True):
+            st.session_state.onboarding_seen = True
+            st.rerun()
 
-st.markdown('<div class="hud-wrap"><div class="hud-title">🏔️ Nuriye Hanım Şahsına TYT Çalışma Yolculuğu</div><div class="hud-sub">Anadolu\'da Bir Öğrenme Serüveni</div></div>', unsafe_allow_html=True)
-
-secilen_ders = st.selectbox("DERS", tum_dersler, index=tum_dersler.index(st.session_state.current_ders), key="ders_sel")
-
-if secilen_ders in mevcut_dersler:
-    konular = list(mevcut_dersler[secilen_ders].keys())
-    default_idx = 0
-    if st.session_state.current_konu and st.session_state.current_konu in konular:
-        default_idx = konular.index(st.session_state.current_konu)
-    secilen_konu = st.selectbox("KONU", konular, index=default_idx, key="konu_sel")
-    
-    if secilen_konu != st.session_state.current_konu:
-        st.session_state.hap_idx = 0
-        st.session_state.current_konu = secilen_konu
-    
-    st.session_state.current_ders = secilen_ders
 else:
-    secilen_konu = st.selectbox("KONU", ["⏳ Yakında Eklenecek"], key="konu_wait", disabled=True)
+    st.markdown('<div class="hud-wrap"><div class="hud-title">🏔️ Nuriye Hanım Şahsına TYT Çalışma Yolculuğu</div><div class="hud-sub">Anadolu\'da Bir Öğrenme Serüveni</div></div>', unsafe_allow_html=True)
 
-if secilen_ders in mevcut_dersler and secilen_konu != "⏳ Yakında Eklenecek":
-    hap_bilgileri = mevcut_dersler[secilen_ders].get(secilen_konu, [])
-    
-    if not hap_bilgileri:
-        st.markdown('<div class="hap-card"><div class="hap-text" style="color:#8b6f47;">⏳ Bu konunun hap bilgileri yükleniyor...</div></div>', unsafe_allow_html=True)
-    else:
-        if st.session_state.hap_idx >= len(hap_bilgileri):
+    secilen_ders = st.selectbox("DERS", tum_dersler, index=tum_dersler.index(st.session_state.current_ders), key="ders_sel")
+
+    if secilen_ders in mevcut_dersler:
+        konular = list(mevcut_dersler[secilen_ders].keys())
+        default_idx = 0
+        if st.session_state.current_konu and st.session_state.current_konu in konular:
+            default_idx = konular.index(st.session_state.current_konu)
+        secilen_konu = st.selectbox("KONU", konular, index=default_idx, key="konu_sel")
+        
+        if secilen_konu != st.session_state.current_konu:
             st.session_state.hap_idx = 0
+            st.session_state.current_konu = secilen_konu
         
-        idx = st.session_state.hap_idx
-        toplam = len(hap_bilgileri)
+        st.session_state.current_ders = secilen_ders
+    else:
+        secilen_konu = st.selectbox("KONU", ["⏳ Yakında Eklenecek"], key="konu_wait", disabled=True)
+
+    if secilen_ders in mevcut_dersler and secilen_konu != "⏳ Yakında Eklenecek":
+        hap_bilgileri = mevcut_dersler[secilen_ders].get(secilen_konu, [])
         
-        pct = round((idx + 1) / toplam * 100, 1)
-        st.markdown(f"""
-        <div class="prog-wrap">
-            <div class="prog-meta"><span>HAP BİLGİ İLERLEMESİ</span><span>{secilen_ders} {idx+1} / {toplam} · %{pct}</span></div>
-            <div class="prog-track"><div class="prog-fill" style="width:{pct}%"></div></div>
-        </div>""", unsafe_allow_html=True)
-        
-        st.markdown(f"""
-        <div class="stat-row">
-            <div class="stat-box"><div class="stat-val">{idx+1}</div><div class="stat-lbl">Şu an</div></div>
-            <div class="stat-box"><div class="stat-val">{toplam}</div><div class="stat-lbl">Toplam</div></div>
-            <div class="stat-box"><div class="stat-val">{st.session_state.toplam_hap_goruldu}</div><div class="stat-lbl">Toplam Görülen</div></div>
-        </div>""", unsafe_allow_html=True)
-        
-        hap_text = str(hap_bilgileri[idx]).replace("<", "&lt;").replace(">", "&gt;")
-        st.markdown(f'<div class="hap-card"><div class="hap-text">{hap_text}</div></div>', unsafe_allow_html=True)
-        
-        if st.session_state.toplam_hap_goruldu in ACHIEVEMENTS:
-            emoji, basarim, aciklama = ACHIEVEMENTS[st.session_state.toplam_hap_goruldu]
+        if not hap_bilgileri:
+            st.markdown('<div class="hap-card"><div class="hap-text" style="color:#8b6f47;">⏳ Bu konunun hap bilgileri yükleniyor...</div></div>', unsafe_allow_html=True)
+        else:
+            if st.session_state.hap_idx >= len(hap_bilgileri):
+                st.session_state.hap_idx = 0
+            
+            idx = st.session_state.hap_idx
+            toplam = len(hap_bilgileri)
+            
+            pct = round((idx + 1) / toplam * 100, 1)
             st.markdown(f"""
-            <div class="achievement-banner">
-                <div class="achievement-emoji">{emoji}</div>
-                <div class="achievement-text">{basarim}</div>
-                <div class="achievement-desc">{aciklama}</div>
+            <div class="prog-wrap">
+                <div class="prog-meta"><span>HAP BİLGİ İLERLEMESİ</span><span>{secilen_ders} {idx+1} / {toplam} · %{pct}</span></div>
+                <div class="prog-track"><div class="prog-fill" style="width:{pct}%"></div></div>
             </div>""", unsafe_allow_html=True)
-        
-        b1, b2, b3 = st.columns(3)
-        
-        with b1:
-            if st.button("◀ ÖNCEKİ", disabled=(idx == 0), key="onceki"):
-                st.session_state.hap_idx = max(0, idx - 1)
-                st.rerun()
-                
-        with b2:
-            if st.button("🔀 RASTGELE", key="rastgele"):
-                st.session_state.hap_idx = random.randint(0, toplam - 1)
-                st.session_state.toplam_hap_goruldu += 1
-                st.rerun()
-        
-        with b3:
-            if st.button("SONRAKİ ▶", disabled=(idx == toplam - 1), key="sonraki"):
-                st.session_state.hap_idx = min(toplam - 1, idx + 1)
-                st.session_state.toplam_hap_goruldu += 1
-                st.rerun()
+            
+            st.markdown(f"""
+            <div class="stat-row">
+                <div class="stat-box"><div class="stat-val">{idx+1}</div><div class="stat-lbl">Şu an</div></div>
+                <div class="stat-box"><div class="stat-val">{toplam}</div><div class="stat-lbl">Toplam</div></div>
+                <div class="stat-box"><div class="stat-val">{st.session_state.toplam_hap_goruldu}</div><div class="stat-lbl">Toplam Görülen</div></div>
+            </div>""", unsafe_allow_html=True)
+            
+            hap_text = str(hap_bilgileri[idx]).replace("<", "&lt;").replace(">", "&gt;")
+            st.markdown(f'<div class="hap-card"><div class="hap-text">{hap_text}</div></div>', unsafe_allow_html=True)
+            
+            if st.session_state.toplam_hap_goruldu in ACHIEVEMENTS:
+                emoji, basarim, aciklama = ACHIEVEMENTS[st.session_state.toplam_hap_goruldu]
+                st.markdown(f"""
+                <div class="achievement-banner">
+                    <div class="achievement-emoji">{emoji}</div>
+                    <div class="achievement-text">{basarim}</div>
+                    <div class="achievement-desc">{aciklama}</div>
+                </div>""", unsafe_allow_html=True)
+            
+            b1, b2, b3 = st.columns(3)
+            
+            with b1:
+                if st.button("◀ ÖNCEKİ", disabled=(idx == 0), key="onceki"):
+                    st.session_state.hap_idx = max(0, idx - 1)
+                    st.rerun()
+                    
+            with b2:
+                if st.button("🔀 RASTGELE", key="rastgele"):
+                    st.session_state.hap_idx = random.randint(0, toplam - 1)
+                    st.session_state.toplam_hap_goruldu += 1
+                    st.rerun()
+            
+            with b3:
+                if st.button("SONRAKİ ▶", disabled=(idx == toplam - 1), key="sonraki"):
+                    st.session_state.hap_idx = min(toplam - 1, idx + 1)
+                    st.session_state.toplam_hap_goruldu += 1
+                    st.rerun()
 
-else:
-    if secilen_ders not in mevcut_dersler:
-        st.markdown(f'<div class="hap-card"><div class="hap-text" style="color:#8b6f47;">⏳ <b>{secilen_ders}</b> dersi henüz hazırlanmadı.</div></div>', unsafe_allow_html=True)
+    else:
+        if secilen_ders not in mevcut_dersler:
+            st.markdown(f'<div class="hap-card"><div class="hap-text" style="color:#8b6f47;">⏳ <b>{secilen_ders}</b> dersi henüz hazırlanmadı.</div></div>', unsafe_allow_html=True)
 
-st.markdown("<hr>", unsafe_allow_html=True)
+    st.markdown("<hr>", unsafe_allow_html=True)
 
-with st.expander("🏔️  ANADOLU'DA YOLCULUGUN HARİTASI"):
-    st.markdown("""
+    with st.expander("🏔️  ANADOLU'DA YOLCULUGUN HARİTASI"):
+        st.markdown("""
 **Hoşgeldin Gizemli Yolcu Nuriye. Ben yakışıklı rehberin. Yolculuğun Haritasını sana veriyorum. Unutma her yeniden başladıgında bir hikaye karşılar seni...:**
 
 Anadolu'da bir öğrenme serüvenine başladın. Her hap bilgiyi okudukça, dağları tırmanıyor, ormanları geçiyor ve kuşları görüyorsun. Bol şans!
@@ -336,12 +339,12 @@ Anadolu'da bir öğrenme serüvenine başladın. Her hap bilgiyi okudukça, dağ
 Her 25 hap bilgide bir yeni başarım açılır. Toplam 1000 Eşsiz Başarım mevcuttur.
 """)
 
-c1, c2 = st.columns([2, 1])
-with c1:
-    if st.button("🔄 YENİLE & YENİ HİKAYE", key="yenile"):
-        st.session_state.daily_story = random.choice(KOMIK_HIKAYELER)
-        st.session_state.onboarding_seen = False
-        st.cache_data.clear()
-        st.rerun()
-with c2:
-  st.markdown(f"<div style='font-family:Poppins,sans-serif;font-size:9px;color:#7a6a5a;letter-spacing:1px;padding:10px 0;'>TYT ÇALIŞMA SİSTEMİ · AŞK İLE YAPILDI ❤️ · MUTEDRA CO.</div>", unsafe_allow_html=True)
+    c1, c2 = st.columns([2, 1])
+    with c1:
+        if st.button("🔄 YENİLE & YENİ HİKAYE", key="yenile"):
+            st.session_state.daily_story = random.choice(KOMIK_HIKAYELER)
+            st.session_state.onboarding_seen = False
+            st.cache_data.clear()
+            st.rerun()
+    with c2:
+        st.markdown(f"<div style='font-family:Poppins,sans-serif;font-size:9px;color:#7a6a5a;letter-spacing:1px;padding:10px 0;'>TYT ÇALIŞMA SİSTEMİ · AŞK İLE YAPILDI ❤️ · MUTEDRA CO.</div>", unsafe_allow_html=True)
